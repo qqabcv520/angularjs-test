@@ -1,0 +1,80 @@
+<nav class="navbar navbar-default navbar-fixed-top"
+     ng-class="{'navbar-transparent':navBgTransparent, 'navbar-default':!navBgTransparent}"
+     role="navigation">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle"
+                ng-click="isNavCollapsed = !isNavCollapsed">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" ui-sref=".articleList" translate>米饭博客</a>
+    </div>
+    <div class="collapse navbar-collapse" uib-collapse="isNavCollapsed" collapsing="isInit()">
+        <ul class="nav navbar-nav">
+            <li class="active" ui-sref-active="active">
+                <a ui-sref=".articleList" translate>文章</a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref=".tagList" translate>话题</a>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li >
+                <a ui-sref=".articleEdit" translate>编辑</a>
+            </li>
+            <li >
+                <a ui-sref=".login" translate>登录</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div ui-view></div>
+
+<footer class="main-footer">
+    <!--<div class="friend-links">-->
+        <!--<div class="container">-->
+            <!--<div class="row">-->
+                <!--<div class="col-xs-12">-->
+                    <!--<div class="title">-->
+                        <!--<h4 translate>友情链接</h4>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+
+            <!--<div class="row">-->
+                <!--<div class="col-sm-4">-->
+                    <!--<ul class="group">-->
+                        <!--<li><a href="#" title="">综合业务平台</a></li>-->
+                        <!--<li><a href="#" title="">教务信息</a></li>-->
+                    <!--</ul>-->
+                <!--</div>-->
+                <!--<div class="col-sm-4">-->
+                    <!--<ul class="group">-->
+                        <!--<li><a href="#" title="">校园门户</a></li>-->
+                        <!--<li><a href="#" title="">协同办公</a></li>-->
+                    <!--</ul>-->
+                <!--</div>-->
+                <!--<div class="col-sm-4">-->
+                    <!--<ul class="group">-->
+                        <!--<li><a href="#" title="">综合业务平台</a></li>-->
+                        <!--<li><a href="#" title="">教务信息</a></li>-->
+                    <!--</ul>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <div class="copyright">
+        <span>Copyright &copy; 2017 <span translate>米饭博客</span></span>
+        |
+        <span>
+            <a href="" target="_blank">[<span translate>后台管理</span>]</a>
+        </span>
+        |
+        <span>
+            <a href="" ng-click="switchLang()">[<span translate>English</span>]</a>
+        </span>
+    </div>
+</footer>

@@ -1,0 +1,10 @@
+.article-edit .jumbotron-header {
+  background: url("../images/post.jpg") no-repeat top;
+  background-size: cover;
+  height: 400px;
+}
+.article-edit .jumbotron-header h1 {
+  text-align: center;
+  margin-top: 150px;
+  color: #fff;
+}

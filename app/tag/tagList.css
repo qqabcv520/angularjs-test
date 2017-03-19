@@ -1,0 +1,34 @@
+.tag-list .jumbotron-header {
+  background: url("../images/tags.jpg") no-repeat top;
+  background-size: cover;
+  height: 400px;
+}
+.tag-list .jumbotron-header h1 {
+  text-align: center;
+  margin-top: 150px;
+  color: #fff;
+}
+.tag-list .panel-tag > .panel-heading {
+  position: relative;
+  padding-left: 10px;
+}
+.tag-list .panel-tag > .panel-heading .tag-title {
+  color: #666;
+  font-size: 35px;
+}
+.tag-list .panel-tag > .panel-heading .tag-title:before {
+  background-color: #ee6e50;
+  content: '';
+  margin-right: 4px;
+  height: 40%;
+  width: 2px;
+  top: 30%;
+  left: 0;
+  position: absolute;
+}
+.tag-list .panel-tag .label {
+  font-size: 14px;
+}
+.tag-list .panel-tag .panel-body {
+  padding-top: 0;
+}
