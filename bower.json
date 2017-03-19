@@ -1,9 +1,9 @@
 {
-  "name": "angular-seed",
+  "name": "mifanBlog",
   "description": "A starter project for AngularJS",
   "version": "0.0.0",
-  "homepage": "https://github.com/angular/angular-seed",
-  "license": "MIT",
+  "homepage": "https://github.com/qqabcv520/mifanBlog",
+  "license": "Apache License 2.0",
   "private": true,
   "dependencies": {
     "angular": "^1.6.2",
@@ -16,7 +16,6 @@
     "restangular": "^1.6.1",
     "angular-loading-bar": "^0.9.0",
     "angular-local-storage": "^0.5.2",
-    "wangEditor": "^2.1.23",
     "textAngular": "^1.5.16"
   }
 }
