@@ -14,8 +14,7 @@
     "angular-translate": "^2.15.1",
     "angular-translate-loader-static-files": "^2.15.1",
     "restangular": "^1.6.1",
-    "angular-loading-bar": "^0.9.0",
     "angular-local-storage": "^0.5.2",
-    "textAngular": "^1.5.16"
+    "wangEditor": "^2.1.23"
   }
 }

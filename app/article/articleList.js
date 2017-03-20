@@ -20,31 +20,37 @@
 
         $document.bind('scroll', scrollHandler);
 
-        var loadOver = true;
+        var loading = false;
+        var lastDate = 0;
         function scrollHandler() {
             var bottom = $uibPosition.viewportOffset(document.body).bottom;
 
             //限制加载频率
-            if(bottom > - 300 && loadOver) {
-                loadOver = false;
+
+
+            var nowDate =  Date.now();
+
+            if(bottom > - 300 && nowDate-lastDate > 500 && !loading) {
+                lastDate = nowDate;
                 load();
             }
 
         }
 
         function load() {
+            loading = true;
             Restangular.one("articles").get(loadParam).then(function (result) {
                 if(result.code == 0) {
                     for(var i = 0; i <  result.data.length; i++) {
                         $rootScope.articles.push(result.data[i]);
                     }
                     loadParam.offset += loadParam.limit;
-                    loadOver = true;
+                    loading = false;
                 }
 
             }, function(err){
                 console.error('加载articleList错误:' + err);
-                loadOver = true;
+                loading = false;
             });
         }
 

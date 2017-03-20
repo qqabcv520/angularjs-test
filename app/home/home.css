@@ -86,6 +86,10 @@
   margin-top: 150px;
   color: #fff;
 }
+.article-edit .editor-article {
+  max-height: 1000000px;
+  height: 300px;
+}
 .tag-list .jumbotron-header {
   background: url("../images/tags.jpg") no-repeat top;
   background-size: cover;

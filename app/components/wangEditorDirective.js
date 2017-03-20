@@ -42,8 +42,20 @@
 
                 // 创建编辑器
                 var editor = new wangEditor(element);
+                editor.config.menus = [
+                    'bold', 'italic', 'strikethrough', 'head',
+                    '|', 'quote', 'unorderlist', 'orderlist', 'alignleft', 'aligncenter', 'alignright',
+                    '|', 'link', 'table', 'img', 'insertcode',
+                    '|', 'undo', 'redo', 'eraser',
+                    '|', 'source'
+                ];
+                editor.config.menuFixed = 50;
                 editor.create();
             }
         }
     }
+
+
+
+
 })();

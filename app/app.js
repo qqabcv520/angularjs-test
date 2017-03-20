@@ -58,7 +58,7 @@
             })
             .state('home.tagList', {
                 url: '/tagList',
-                templateUrl: 'tag/tagList.html',
+                templateUrl: 'tag/tagList.html'
                 // controller: 'TagListCtrl'
             })
             .state('home.login', {
@@ -84,16 +84,14 @@
     appRun.$inject = ['Restangular', 'localStorageService', '$rootScope'];
     function appRun(Restangular, localStorageService, $rootScope) {
 
-        var token = localStorageService.get('token');
-
-        $rootScope.token = token;
+        $rootScope.token = localStorageService.get('token');
 
         $rootScope.$watch('token', function (newVal) {
             Restangular.setDefaultHeaders({token: newVal});
             localStorageService.set('token', newVal);
         });
 
-        Restangular.setBaseUrl('http://192.168.1.103:8080/myblog');
+        Restangular.setBaseUrl('http://192.168.1.101:8080/myblog');
     }
 
 })();
