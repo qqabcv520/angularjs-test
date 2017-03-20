@@ -17,7 +17,8 @@
 
     appConfig.$inject = ['$translateProvider', 'localStorageServiceProvider'];
     function appConfig($translateProvider, localStorageServiceProvider) {
-        $translateProvider.preferredLanguage();//语言
+
+        $translateProvider.preferredLanguage('zh-cn');//语言
         $translateProvider.useSanitizeValueStrategy(null);//设置HTML转义策略
         $translateProvider.useStaticFilesLoader({
             prefix: 'language/',
@@ -71,7 +72,7 @@
 
         enterLogin.$inject = ['navbar'];
         function enterLogin(navbar) {
-            navbar.headerHeight = -10000;
+            navbar.headerHeight = -10000;//永不透明
         }
 
 
@@ -81,8 +82,12 @@
         }
     }
 
-    appRun.$inject = ['Restangular', 'localStorageService', '$rootScope'];
-    function appRun(Restangular, localStorageService, $rootScope) {
+    appRun.$inject = ['Restangular', '$translate', 'localStorageService', '$rootScope'];
+    function appRun(Restangular, $translate, localStorageService, $rootScope) {
+
+
+        Restangular.setBaseUrl('http://192.168.1.101:8080/myblog');
+
 
         $rootScope.token = localStorageService.get('token');
 
@@ -91,7 +96,24 @@
             localStorageService.set('token', newVal);
         });
 
-        Restangular.setBaseUrl('http://192.168.1.101:8080/myblog');
+
+        $rootScope.token = localStorageService.get('token');
+
+        $rootScope.$watch('token', function (newVal) {
+            Restangular.setDefaultHeaders({token: newVal});
+            localStorageService.set('token', newVal);
+        });
+
+        $rootScope.currentLang = localStorageService.get('currentLang') || 'zh-cn';
+
+        $rootScope.$watch('currentLang', function (newVal) {
+            if(newVal == null) {
+                return;
+            }
+            localStorageService.set('currentLang', newVal);
+
+            $translate.use($rootScope.currentLang);
+        });
     }
 
 })();

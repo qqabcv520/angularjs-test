@@ -16,8 +16,8 @@
 
 
 
-    HomeCtrl.$inject = ['$scope', '$document', '$q', '$translate', '$state', 'navbar'];
-    function HomeCtrl($scope, $document, $q, $translate, $state, navbar) {
+    HomeCtrl.$inject = ['$scope', '$rootScope', '$document', '$q', '$translate', '$state', 'navbar'];
+    function HomeCtrl($scope, $rootScope, $document, $q, $translate, $state, navbar) {
 
         $scope.currentTab = 0;
         $scope.isNavCollapsed = true;
@@ -26,7 +26,6 @@
 
         $document.bind('scroll', scrollHandler);
 
-        $scope.currentLang = $translate.use();
         $scope.switchLang = switchLang;
 
 
@@ -63,17 +62,14 @@
 
 
         function switchLang() {
-            if ($scope.currentLang != 'zh-cn') {
-                $scope.currentLang = 'zh-cn';
+            if ($rootScope.currentLang != 'en-us') {
+                $rootScope.currentLang = 'en-us';
             } else {
-                $scope.currentLang = 'en-us';
+                $rootScope.currentLang = 'zh-cn';
             }
-            window.localStorage.lang = $scope.currentLang;
-            var ranslatePromise = $translate.use($scope.currentLang);
-
-            ranslatePromise.then(function () {
+            $translate.use($rootScope.currentLang).then(function () {
                 $state.reload();
-            });
+            })
 
         }
     }
