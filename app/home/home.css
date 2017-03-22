@@ -57,6 +57,11 @@
 .article-list .panel-article > .panel-tag > .article-info > a {
   color: #999;
 }
+.article-list .panel-loading {
+  text-align: center;
+  line-height: 100px;
+  color: #ee6e50;
+}
 .article-detail .jumbotron-header {
   background: url("../images/post.jpg") no-repeat top;
   background-size: cover;
@@ -88,7 +93,10 @@
 }
 .article-edit .editor-article {
   max-height: 1000000px;
-  height: 300px;
+  height: 400px;
+}
+.article-edit .submit-article {
+  margin: 20px 10px;
 }
 .tag-list .jumbotron-header {
   background: url("../images/tags.jpg") no-repeat top;
@@ -127,6 +135,12 @@
 .login .panel-login {
   margin-top: 150px;
   margin-bottom: 300px;
+}
+.nav,
+.pagination,
+.carousel,
+.panel-title a {
+  cursor: pointer;
 }
 ::-moz-selection {
   color: #fff;
@@ -216,27 +230,27 @@ body {
   background-color: #fff;
 }
 .btn-main {
-  color: #eee;
-  background-color: #ee6e50;
+  color: #fff;
+  background-color: #e94722;
   border-color: #e94722;
 }
 .btn-main:focus,
 .btn-main.focus {
-  color: #eee;
-  background-color: #e94722;
-  border-color: #7f220c;
+  color: #fff;
+  background-color: #dc3b15;
+  border-color: #bc3212;
 }
 .btn-main:hover {
-  color: #eee;
-  background-color: #e94722;
-  border-color: #bc3212;
+  color: #fff;
+  background-color: #dc3b15;
+  border-color: #d73a15;
 }
 .btn-main:active,
 .btn-main.active,
 .open > .dropdown-toggle.btn-main {
-  color: #eee;
-  background-color: #e94722;
-  border-color: #bc3212;
+  color: #fff;
+  background-color: #dc3b15;
+  border-color: #d73a15;
 }
 .btn-main:active:hover,
 .btn-main.active:hover,
@@ -247,9 +261,9 @@ body {
 .btn-main:active.focus,
 .btn-main.active.focus,
 .open > .dropdown-toggle.btn-main.focus {
-  color: #eee;
-  background-color: #d33914;
-  border-color: #7f220c;
+  color: #fff;
+  background-color: #ce3714;
+  border-color: #bc3212;
 }
 .btn-main:active,
 .btn-main.active,
@@ -265,12 +279,12 @@ fieldset[disabled] .btn-main:focus,
 .btn-main.disabled.focus,
 .btn-main[disabled].focus,
 fieldset[disabled] .btn-main.focus {
-  background-color: #ee6e50;
+  background-color: #e94722;
   border-color: #e94722;
 }
 .btn-main .badge {
-  color: #ee6e50;
-  background-color: #eee;
+  color: #e94722;
+  background-color: #fff;
 }
 .navbar-collapse.in {
   overflow-y: hidden;

@@ -15,11 +15,11 @@
 
 
 
-    appConfig.$inject = ['$translateProvider', 'localStorageServiceProvider'];
-    function appConfig($translateProvider, localStorageServiceProvider) {
+    appConfig.$inject = ['$translateProvider'];
+    function appConfig($translateProvider) {
 
         $translateProvider.preferredLanguage('zh-cn');//语言
-        $translateProvider.useSanitizeValueStrategy(null);//设置HTML转义策略
+        $translateProvider.useSanitizeValueStrategy('sanitizeParameters');//设置HTML转义策略,在有参数时清除
         $translateProvider.useStaticFilesLoader({
             prefix: 'language/',
             suffix: '.json'

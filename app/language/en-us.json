@@ -6,7 +6,9 @@
   "友情链接": "friend link",
   "后台管理": "management",
   "登录": "login",
+  "发布": "post",
   "用户名": "username",
   "邮箱": "e-mail",
-  "密码": "password"
+  "密码": "password",
+  "请选择最多5个标签": "Please select up to 5 tags"
 }

@@ -62,7 +62,7 @@
 
 
         function switchLang() {
-            if ($rootScope.currentLang != 'en-us') {
+            if ($rootScope.currentLang !== 'en-us') {
                 $rootScope.currentLang = 'en-us';
             } else {
                 $rootScope.currentLang = 'zh-cn';

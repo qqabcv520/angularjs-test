@@ -11,6 +11,33 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+
+                <ui-select ng-model="selected.value" multiple  limit="5" tagging="tagging" tagging-label="(新建)">
+                    <ui-select-match placeholder="{{'最多选择五项'|translate}}">
+                        <span ng-bind="$item.name"></span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="tag in tags"
+                                       refresh="refreshTags($select.search)"
+                                       refresh-delay="1000">
+                        {{tag.name}}
+                    </ui-select-choices>
+                </ui-select>
+
+
+                <!--<ui-select multiple limit="3" tagging ng-model="LimitedResult.selectedItems">-->
+                    <!--<ui-select-match placeholder="Select up to 3 items">{{$item}}</ui-select-match>-->
+                    <!--<ui-select-choices repeat="thisItem in [] | filter:$select.search">-->
+                        <!--{{thisItem}}-->
+                    <!--</ui-select-choices>-->
+                <!--</ui-select>-->
+
+
+                <button class="btn btn-main submit-article" translate>提交文章</button>
+                <button class="btn btn-default submit-article" translate>预览文章</button>
+            </div>
+        </div>
     </div>
-    <!--<div ng-bind-html=""></div>-->
+
 </div>

@@ -7,6 +7,10 @@
 
 
 
+//修复UI Bootstrap的css问题
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+
 ::-moz-selection {
   color: #fff;
   background-color: @main-color-focus;
@@ -19,8 +23,6 @@
 body {
   font-family:"Microsoft YaHei", Arial, Helvetica, sans-serif;
 }
-
-
 
 
 
@@ -136,7 +138,7 @@ body {
 
 .btn-main {
     @color: @light-focus-font-color;
-    @background: @main-color;
+    @background: @main-color-focus;
     @border: @main-color-focus;
 
     color: @color;
@@ -146,27 +148,27 @@ body {
     &:focus,
     &.focus {
         color: @color;
-        background-color: darken(@background, 10%);
-        border-color: darken(@border, 25%);
+        background-color: darken(@background, 5%);
+        border-color: darken(@border, 12%);
     }
     &:hover {
         color: @color;
-        background-color: darken(@background, 10%);
-        border-color: darken(@border, 12%);
+        background-color: darken(@background, 5%);
+        border-color: darken(@border, 6%);
     }
     &:active,
     &.active,
     .open > .dropdown-toggle& {
         color: @color;
-        background-color: darken(@background, 10%);
-        border-color: darken(@border, 12%);
+        background-color: darken(@background, 5%);
+        border-color: darken(@border, 6%);
 
         &:hover,
         &:focus,
         &.focus {
             color: @color;
-            background-color: darken(@background, 17%);
-            border-color: darken(@border, 25%);
+            background-color: darken(@background, 8%);
+            border-color: darken(@border, 12%);
         }
     }
     &:active,

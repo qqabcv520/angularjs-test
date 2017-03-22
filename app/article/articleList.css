@@ -57,3 +57,8 @@
 .article-list .panel-article > .panel-tag > .article-info > a {
   color: #999;
 }
+.article-list .panel-loading {
+  text-align: center;
+  line-height: 100px;
+  color: #ee6e50;
+}

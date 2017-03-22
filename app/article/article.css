@@ -57,6 +57,11 @@
 .article-list .panel-article > .panel-tag > .article-info > a {
   color: #999;
 }
+.article-list .panel-loading {
+  text-align: center;
+  line-height: 100px;
+  color: #ee6e50;
+}
 .article-detail .jumbotron-header {
   background: url("../images/post.jpg") no-repeat top;
   background-size: cover;
@@ -88,5 +93,8 @@
 }
 .article-edit .editor-article {
   max-height: 1000000px;
-  height: 300px;
+  height: 400px;
+}
+.article-edit .submit-article {
+  margin: 20px 10px;
 }
