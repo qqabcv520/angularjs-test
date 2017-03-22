@@ -16,9 +16,7 @@
         $scope.tagging = tagging;
 
         Restangular.one("tags").get().then(function (result) {
-            if(result.code === 0) {
-                $scope.tags = result.data;
-            }
+            $scope.tags = result;
         }, function(err){
             console.error('加载tagList错误:' + err);
         });
