@@ -20,16 +20,10 @@
             console.log($scope.login.password);
 
             Restangular.one("users").post('token', $scope.login).then(function (result) {
-                if(result.code == 0) {
-                    $rootScope.token = result.data;
-                } else {
-                    console.error('登录失败:' + result.state);
-                }
 
             }, function(err){
-                console.error('提交登录信息失败:' + err);
+                console.error('登录失败:' + err.state);
             });
         }
-
     }
 })();

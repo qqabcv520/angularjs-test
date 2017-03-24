@@ -12,6 +12,12 @@
   max-height: 1000000px;
   height: 400px;
 }
+.article-edit .tag-select {
+  padding-left: 14px;
+  padding-right: 14px;
+  border-radius: 0;
+  margin-top: 10px;
+}
 .article-edit .submit-article {
   margin: 20px 10px;
 }
