@@ -1,0 +1,40 @@
+<div class="article-list">
+    <header class="jumbotron jumbotron-header">
+        <h1 >Hello, world!</h1>
+    </header>
+
+    <div class="container-fluid content">
+        <div class="row">
+            <div class="col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+                <div class="panel panel-article" ng-repeat="article in vm.loader.articles">
+                    <div class="panel-heading">
+                        <h3 class="article-title">
+                            <a ui-sref="home.articleDetail({articleId:article.id})" ng-bind="article.title"></a>
+                        </h3>
+                    </div>
+                    <div class="panel-body" ng-bind="article.outline"></div>
+                    <div class="panel-tag">
+                        <div class="article-tag pull-left">
+                            <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
+                            <a href="" class="label label-transparent">UI</a>
+                            <a href="" class="label label-transparent">Angular</a>
+                            <a href="" class="label label-transparent">UI</a>
+                            <a href="" class="label label-transparent">Angular</a>
+                            <a href="" class="label label-transparent">UI</a>
+                            <a href="" class="label label-transparent">Angular</a>
+                            <a href="" class="label label-transparent">UI</a>
+                            <a href="" class="label label-transparent">Angular</a>
+                        </div>
+                        <span class="article-info pull-right">
+						<span>米饭</span>
+						<span>2017-03-03</span>
+					</span>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div ng-if="vm.loader.loadState=='loading'" class="panel-loading">加载中……</div>
+                <div ng-if="vm.loader.loadState=='over'" class="panel-loading">没有更多了</div>
+            </div>
+        </div>
+    </div>
+</div>
