@@ -3,8 +3,8 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin'); //html模板插件
 const ExtractTextPlugin = require("extract-text-webpack-plugin"); //css分割插件
 const CleanWebpackPlugin = require('clean-webpack-plugin'); // 删除旧bundle插件
-const NgAnnotatePlugin = require('ng-annotate-webpack-plugin'); //自动注入注解插件
 const autoprefixer = require('autoprefixer');//css自动添加浏览器前缀
+// const NgAnnotatePlugin = require('ng-annotate-webpack-plugin'); //自动注入注解插件，devtool为eval时会失效
 // const { CheckerPlugin } =  require('awesome-typescript-loader')
 
 module.exports = {
@@ -53,7 +53,7 @@ module.exports = {
         }, {
             test: /\.ts$/,
             exclude: /(node_modules|bower_components)/,
-            loader: 'awesome-typescript-loader'
+            loader: 'ng-annotate-loader!awesome-typescript-loader'
         }/*, {
             enforce: "pre",
             test: /\.js$/,
@@ -85,9 +85,9 @@ module.exports = {
             //exclude: ["files", "ignore"]//排除不删除的目录，主要用于避免删除公用的文件
         }),
         new ExtractTextPlugin('styles/styles.[hash:6].css'),//分割后的CSS
-        new NgAnnotatePlugin({
-            add: true
-        }),
+        // new NgAnnotatePlugin({
+        //     add: true
+        // }),
         new webpack.LoaderOptionsPlugin({//loader选项
             options: {
                 postcss: function(){
@@ -112,7 +112,7 @@ module.exports = {
             }
         })
     ],
-    devtool: 'source-map',
+    // devtool: 'source-map',
     resolve: {
         alias: {
             wangEditorDirective: path.resolve(__dirname, './app/commons/wangEditor/wangEditorDirective.ts')//路径重定向

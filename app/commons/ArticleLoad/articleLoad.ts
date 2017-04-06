@@ -14,10 +14,6 @@ export default angular.module("articleLoad", ["restangular"])
 
 
 
-export enum LoadState{
-    ready, loading, over
-}
-
 
 
 export interface IArticle {

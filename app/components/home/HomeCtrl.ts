@@ -81,9 +81,10 @@ export default class HomeCtrl {
      * 根据现在位置设置导航栏背景色
      */
     changeNavBg(): void {
-        if (document.body.scrollTop >= this.navbar.headerHeight && this.isNavTransparent) {
+
+        if (this.$document.scrollTop() >= this.navbar.headerHeight && this.isNavTransparent) {
             this.isNavTransparent = false;
-        } else if (document.body.scrollTop < this.navbar.headerHeight && !this.isNavTransparent) {
+        } else if (this.$document.scrollTop() < this.navbar.headerHeight && !this.isNavTransparent) {
             this.isNavTransparent = true;
         }
     }
