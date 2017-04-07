@@ -6,7 +6,7 @@
 import * as angular from "angular";
 
 import ArticleListCtrl from './ArticleListCtrl';
-import articleLoad from '../../commons/ArticleLoad/articleLoad';
+import articleLoad from '../../commons/articleLoad/articleLoad';
 
 export default angular.module('articleList', ['ui.bootstrap', 'restangular', articleLoad])
     .controller('ArticleListCtrl',  ArticleListCtrl)

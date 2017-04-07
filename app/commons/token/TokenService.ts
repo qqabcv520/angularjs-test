@@ -4,17 +4,21 @@
 
 
 
-import {local} from "angular";
-import ILocalStorageService = local.storage.ILocalStorageService;
+import LocalStorageService from "../localStorage/LocalStorageService";
 import {IService} from "restangular";
 
 /*@ngInject*/
 export default class TokenService {
 
-    private _token: string;
 
-    constructor(private Restangular: IService, private localStorageService: ILocalStorageService) {
-        this.token = this.localStorageService.get<string>("token");
+    private _token: string | null;
+    private _isRemember: boolean;
+
+    constructor(private Restangular: IService, private LocalStorageService: LocalStorageService) {
+        this._isRemember = this.LocalStorageService.get<boolean>("isRemember") || false;
+        if(this._isRemember) {
+            this.token = this.LocalStorageService.get<string>("token");
+        }
     }
 
     /**
@@ -29,14 +33,24 @@ export default class TokenService {
         });
     }
 
-    get token(): string {
+    get token(): string | null {
         return this._token;
     }
 
-    set token(value: string) {
+    set token(value: string | null) {
         this._token = value;
         this.Restangular.setDefaultHeaders({token: value});
-        this.localStorageService.set<string>("token", value);
+        if(this._isRemember) {
+            this.LocalStorageService.set<string>("token", value);
+        }
+    }
+
+    get isRemember(): boolean {
+        return this._isRemember;
+    }
+
+    set isRemember(value: boolean) {
+        this._isRemember = value;
     }
 }
 

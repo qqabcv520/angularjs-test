@@ -5,6 +5,7 @@
 import {ui} from "angular";
 import IStateProvider = ui.IStateProvider;
 import IUrlRouterProvider = ui.IUrlRouterProvider;
+import {INavbarConfig} from "./home";
 
 const articleListHtml: string = require('../../components/articleList/articleList.html');
 const articleDetailHtml: string = require('../../components/articleDetail/articleDetail.html');
@@ -51,13 +52,13 @@ export default function appRoute($stateProvider: IStateProvider,
         });
 
     /*@ngInject*/
-    function enterLogin(navbar) {
+    function enterLogin(navbar: INavbarConfig) {
         navbar.headerHeight = -10000;//永不透明
     }
 
 
     /*@ngInject*/
-    function exitLogin(navbar) {
+    function exitLogin(navbar: INavbarConfig) {
         navbar.headerHeight = 350;
     }
 }

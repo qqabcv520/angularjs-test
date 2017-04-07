@@ -32,8 +32,8 @@
                         <div class="clearfix"></div>
                     </div>
                 </div>
-                <div ng-if="vm.loader.loadState=='loading'" class="panel-loading">加载中……</div>
-                <div ng-if="vm.loader.loadState=='over'" class="panel-loading">没有更多了</div>
+                <div ng-if="vm.isLoadState('loading') || vm.isLoadState('ready')" class="panel-loading">加载中……</div>
+                <div ng-if="vm.isLoadState('over')" class="panel-loading">没有更多了</div>
             </div>
         </div>
     </div>

@@ -2,7 +2,7 @@
  * Created by 米饭 on 2017-04-01.
  */
 
-import TagListLoadService from "../../commons/TagLoad/TagListLoadService";
+import TagListLoadService from "../../commons/tagLoad/TagListLoadService";
 import {ISCEService} from "angular";
 
 /*@ngInject*/

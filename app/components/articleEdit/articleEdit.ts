@@ -14,8 +14,3 @@ import tagLoad from '../../commons/tagLoad/tagLoad';
 export default angular.module('articleEdit', ['ui.select', 'ngSanitize', wangEditorDirective, tagLoad])
     .controller('ArticleEditCtrl', ArticleEditCtrl)
     .name;
-
-
-function cfg($) {
-
-}

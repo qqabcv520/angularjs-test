@@ -6,7 +6,8 @@
 
 import * as angular from 'angular';
 
-import wangEditor = require('./js/wangEditor');
+import WangEditor = require('./js/wangEditor');
+import {IAttributes, INgModelController, IScope} from "angular";
 
 
 export default angular.module('wangEditorDirective', [])
@@ -18,7 +19,7 @@ function contentEditable() {
         restrict: 'A',
         require: '?ngModel',
         replace: false,
-        link: function (scope, element, attrs, ngModel) {
+        link: function (scope: IScope, element: JQuery, attrs: IAttributes, ngModel: INgModelController) {
             // 初始化 编辑器内容
             if (!ngModel) {
                 return;
@@ -38,7 +39,7 @@ function contentEditable() {
             }
 
             // 创建编辑器
-            let editor = new wangEditor(element);
+            let editor = new WangEditor(element);
             editor.config.menus = [
                 'bold', 'italic', 'strikethrough', 'head', '|',
                 'quote', 'unorderlist', 'orderlist', 'alignleft', 'aligncenter', 'alignright', '|',

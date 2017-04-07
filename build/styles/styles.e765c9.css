@@ -1,0 +1,336 @@
+.tag-list .jumbotron-header {
+  background: url(/mifanBlog/build/images/tags.6e6058.jpg) no-repeat top;
+  background-size: cover;
+  height: 400px;
+}
+.tag-list .jumbotron-header h1 {
+  text-align: center;
+  margin-top: 150px;
+  color: #fff;
+}
+.tag-list .panel-tag > .panel-heading {
+  position: relative;
+  padding-left: 10px;
+}
+.tag-list .panel-tag > .panel-heading .tag-title {
+  color: #666;
+  font-size: 35px;
+}
+.tag-list .panel-tag > .panel-heading .tag-title:before {
+  background-color: #ee6e50;
+  content: '';
+  margin-right: 4px;
+  height: 40%;
+  width: 2px;
+  top: 30%;
+  left: 0;
+  position: absolute;
+}
+.tag-list .panel-tag .label {
+  font-size: 14px;
+}
+.tag-list .panel-tag .panel-body {
+  padding-top: 0;
+}
+.login .panel-login {
+  margin-top: 150px;
+  margin-bottom: 300px;
+}
+.article-list .jumbotron-header {
+  background: url(/mifanBlog/build/images/all.d912ea.jpg) no-repeat top;
+  background-size: cover;
+  height: 400px;
+}
+.article-list .jumbotron-header h1 {
+  text-align: center;
+  margin-top: 140px;
+  color: #fff;
+}
+.article-list .panel-article > .panel-heading {
+  padding-bottom: 0;
+}
+.article-list .panel-article > .panel-heading > .article-title {
+  position: relative;
+  padding-left: 10px;
+}
+.article-list .panel-article > .panel-heading > .article-title > a {
+  color: #333;
+}
+@media (max-width: 750px) {
+  .article-list .panel-article > .panel-heading > .article-title > a {
+    font-size: 20px;
+  }
+}
+.article-list .panel-article > .panel-heading > .article-title > a:hover,
+.article-list .panel-article > .panel-heading > .article-title > a:focus {
+  color: #e94722;
+  text-decoration: none;
+}
+.article-list .panel-article > .panel-heading > .article-title > a:visited {
+  color: #666;
+}
+.article-list .panel-article > .panel-heading > .article-title > a:before {
+  background-color: #ee6e50;
+  content: '';
+  margin-right: 4px;
+  height: 90%;
+  width: 2px;
+  top: 5%;
+  left: 0;
+  position: absolute;
+}
+.article-list .panel-article > .panel-body {
+  color: #666;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.article-list .panel-article > .panel-tag {
+  padding: 0 15px;
+  color: #999;
+}
+.article-list .panel-article > .panel-tag > .article-info {
+  float: right;
+  padding: .1em .6em;
+}
+.article-list .panel-article > .panel-tag > .article-info > a {
+  color: #999;
+}
+.article-list .panel-loading {
+  text-align: center;
+  line-height: 100px;
+  color: #ee6e50;
+}
+.article-detail .jumbotron-header {
+  background: url(/mifanBlog/build/images/post.7b9fbf.jpg) no-repeat top;
+  background-size: cover;
+  height: 400px;
+}
+.article-detail .jumbotron-header h1 {
+  text-align: center;
+  margin-top: 150px;
+  color: #fff;
+}
+.article-detail .article-content {
+  line-height: 1.7;
+  font-size: 17px;
+  color: #666;
+}
+.article-detail .article-footer {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.article-edit .jumbotron-header {
+  background: url(/mifanBlog/build/images/post.7b9fbf.jpg) no-repeat top;
+  background-size: cover;
+  height: 400px;
+}
+.article-edit .jumbotron-header h1 {
+  text-align: center;
+  margin-top: 150px;
+  color: #fff;
+}
+.article-edit .editor-article {
+  max-height: 1000000px;
+  height: 400px;
+}
+.article-edit .tag-select {
+  border-radius: 0;
+  margin-top: 10px;
+}
+.article-edit .submit-article {
+  margin: 20px 10px;
+}
+.nav,
+.pagination,
+.carousel,
+.panel-title a {
+  cursor: pointer;
+}
+::-moz-selection {
+  background-color: rgba(238, 110, 80, 0.2);
+}
+::selection {
+  background-color: rgba(238, 110, 80, 0.2);
+}
+body {
+  font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+}
+.label-transparent {
+  background-color: transparent;
+  color: #999;
+  border: 0.09em #ccc solid;
+  line-height: 2.2em;
+  margin-right: 0.5em;
+}
+.label-transparent[href]:hover,
+.label-transparent[href]:focus {
+  color: #ee6e50;
+  border-color: #ee6e50;
+}
+.navbar {
+  -webkit-transition: background-color 0.5s, border-color, 0.5s;
+  transition: background-color 0.5s, border-color, 0.5s;
+}
+.navbar-brand {
+  font-weight: bold;
+}
+.navbar-default .navbar-toggle:focus,
+.navbar-default .navbar-toggle:hover {
+  background-color: transparent;
+}
+.navbar-default .navbar-toggle:active {
+  background-color: #ddd;
+}
+.navbar-fixed-top .navbar-right,
+.navbar-fixed-bottom .navbar-right {
+  margin-right: 10px;
+}
+.navbar-transparent {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+.navbar-transparent .navbar-brand {
+  color: #eee;
+}
+.navbar-transparent .navbar-brand:hover,
+.navbar-transparent .navbar-brand:focus {
+  color: #fff;
+  background-color: transparent;
+}
+.navbar-transparent .navbar-text {
+  color: #ddd;
+}
+.navbar-transparent .navbar-nav > li > a {
+  color: #eee;
+}
+.navbar-transparent .navbar-nav > li > a:hover,
+.navbar-transparent .navbar-nav > li > a:focus {
+  color: #fff;
+  background-color: transparent;
+}
+.navbar-transparent .navbar-nav > .active > a,
+.navbar-transparent .navbar-nav > .active > a:hover,
+.navbar-transparent .navbar-nav > .active > a:focus {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.navbar-transparent .navbar-nav > .disabled > a,
+.navbar-transparent .navbar-nav > .disabled > a:hover,
+.navbar-transparent .navbar-nav > .disabled > a:focus {
+  color: #ccc;
+  background-color: transparent;
+}
+.navbar-transparent .navbar-toggle {
+  border-color: #fff;
+}
+.navbar-transparent .navbar-toggle:active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.navbar-transparent .navbar-toggle .icon-bar {
+  background-color: #fff;
+}
+.btn-main {
+  color: #fff;
+  background-color: #e94722;
+  border-color: #e94722;
+}
+.btn-main:focus,
+.btn-main.focus {
+  color: #fff;
+  background-color: #dc3b15;
+  border-color: #bc3212;
+}
+.btn-main:hover {
+  color: #fff;
+  background-color: #dc3b15;
+  border-color: #d73a15;
+}
+.btn-main:active,
+.btn-main.active,
+.open > .dropdown-toggle.btn-main {
+  color: #fff;
+  background-color: #dc3b15;
+  border-color: #d73a15;
+}
+.btn-main:active:hover,
+.btn-main.active:hover,
+.open > .dropdown-toggle.btn-main:hover,
+.btn-main:active:focus,
+.btn-main.active:focus,
+.open > .dropdown-toggle.btn-main:focus,
+.btn-main:active.focus,
+.btn-main.active.focus,
+.open > .dropdown-toggle.btn-main.focus {
+  color: #fff;
+  background-color: #ce3714;
+  border-color: #bc3212;
+}
+.btn-main:active,
+.btn-main.active,
+.open > .dropdown-toggle.btn-main {
+  background-image: none;
+}
+.btn-main.disabled:hover,
+.btn-main[disabled]:hover,
+fieldset[disabled] .btn-main:hover,
+.btn-main.disabled:focus,
+.btn-main[disabled]:focus,
+fieldset[disabled] .btn-main:focus,
+.btn-main.disabled.focus,
+.btn-main[disabled].focus,
+fieldset[disabled] .btn-main.focus {
+  background-color: #e94722;
+  border-color: #e94722;
+}
+.btn-main .badge {
+  color: #e94722;
+  background-color: #fff;
+}
+.navbar-collapse.in {
+  overflow-y: hidden;
+}
+.main-footer {
+  margin-top: 30px;
+}
+.main-footer .friend-links {
+  background-color: #444;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.main-footer .friend-links .title {
+  border-bottom: 1px solid #666;
+  color: #ddd;
+  margin-bottom: 20px;
+}
+.main-footer .friend-links .title:after {
+  content: "";
+  width: 75px;
+  height: 1px;
+  background: #ee6e50;
+  position: absolute;
+}
+.main-footer .friend-links .group {
+  text-align: center;
+  line-height: 30px;
+  list-style-type: none;
+}
+.main-footer .friend-links .group a {
+  color: #999;
+}
+.main-footer .friend-links .group a:hover {
+  color: #aaa;
+  text-decoration: none;
+}
+.main-footer .copyright {
+  background-color: #222;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  color: #555;
+}
+.main-footer .copyright a {
+  color: #666;
+}
+.home-content {
+  min-height: 700px;
+}

@@ -3,8 +3,8 @@
  */
 
 import {IStateParamsService} from "@types/angular-ui-router";
-import ArticleLoadService from "../../commons/ArticleLoad/ArticleLoadService";
-import {IArticle} from "../../commons/ArticleLoad/articleLoad";
+import ArticleLoadService from "../../commons/articleLoad/ArticleLoadService";
+import {IArticle} from "../../commons/articleLoad/articleLoad";
 import {ISCEService} from "angular";
 
 /*@ngInject*/

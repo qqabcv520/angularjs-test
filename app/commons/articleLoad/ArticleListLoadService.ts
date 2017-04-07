@@ -54,7 +54,6 @@ export default class ArticleListLoadService {
 
         }).catch((err) => {
             this._loadState = LoadState.ready;
-            console.error("加载articleList错误:" + err);
         });
         return promise;
     }

@@ -3,9 +3,9 @@
  */
 
 
-import {translate, local} from "angular";
+import {translate} from "angular";
 import ITranslateService = translate.ITranslateService;
-import ILocalStorageService = local.storage.ILocalStorageService;
+import LocalStorageService from "../localStorage/LocalStorageService";
 
 /*@ngInject*/
 export default class LangService {
@@ -14,8 +14,8 @@ export default class LangService {
 
     private _currentLang: string;
 
-    constructor(private localStorageService: ILocalStorageService, private $translate: ITranslateService) {
-        this.currentLang = localStorageService.get<string>('currentLang') || 'zh-cn';
+    constructor(private LocalStorageService: LocalStorageService, private $translate: ITranslateService) {
+        this.currentLang = LocalStorageService.get<string>('currentLang') || 'zh-cn';
     }
 
     get currentLang(): string {
@@ -24,7 +24,7 @@ export default class LangService {
 
     set currentLang(value: string) {
         this._currentLang = value;
-        this.localStorageService.set('currentLang', value);
+        this.LocalStorageService.set('currentLang', value);
         this.$translate.use(this._currentLang);
     }
 

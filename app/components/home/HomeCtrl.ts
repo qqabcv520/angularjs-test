@@ -7,6 +7,7 @@ import {IDocumentService, IPromise, IQService, IRootScopeService} from "angular"
 import {IStateService} from "@types/angular-ui-router";
 import {translate} from "angular";
 import ITranslateService = translate.ITranslateService;
+import {INavbarConfig} from "./home";
 
 /*@ngInject*/
 export default class HomeCtrl {
@@ -31,7 +32,7 @@ export default class HomeCtrl {
                 private $q: IQService,
                 private $translate: ITranslateService,
                 private $state: IStateService,
-                private navbar) {
+                private navbar: INavbarConfig) {
 
         this.initState = true;
         this.isNavCollapsed = true;

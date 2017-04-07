@@ -4,10 +4,11 @@
 
 
 import * as angular from "angular"
+import webStorage from "../localStorage/webStorage";
 import TokenService from "./TokenService";
 
 
-export default angular.module("token", ["restangular", "LocalStorageModule"])
+export default angular.module("token", ["restangular", webStorage])
     .service("TokenService", TokenService)
     .name;
 

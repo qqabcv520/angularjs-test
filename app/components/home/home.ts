@@ -21,3 +21,6 @@ export default angular.module('home', ['ngAnimate', 'ui.bootstrap', 'ui.router',
     .name;
 
 
+export interface INavbarConfig {
+    headerHeight: number
+}
