@@ -29,9 +29,21 @@ export default class LocalStorageService {
         return angular.fromJson(jsonStr);
     }
 
+    clear(): void {
+        this.localStorage.clear();
+    }
+
+    remove(key: string): void {
+        this.localStorage.removeItem(key);
+    }
+
 
     get isSupported(): boolean {
         return this._isSupported;
+    }
+
+    get length(): number {
+        return this.localStorage.length;
     }
 }
 
