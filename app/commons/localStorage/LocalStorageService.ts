@@ -17,6 +17,7 @@ export default class LocalStorageService {
         this._isSupported = !!$window.localStorage;
     }
 
+
     set<T>(key: string, value: T | null) {
         let jsonStr = angular.toJson(value);
         this.localStorage.setItem(key, jsonStr);
@@ -37,6 +38,9 @@ export default class LocalStorageService {
         this.localStorage.removeItem(key);
     }
 
+    key(index: number): string | null {
+        return this.localStorage.key(index);
+    }
 
     get isSupported(): boolean {
         return this._isSupported;

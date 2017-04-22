@@ -1,5 +1,5 @@
 
-@import url(../../styles/appColor);
+@import url(../../styles/appVariables);
 
 .article-edit {
 
@@ -7,12 +7,29 @@
         background: url("../../images/post.jpg") no-repeat top;
         background-size: cover;
         height: 400px;
+        text-align: center;
 
 
-        h1 {
+
+        input {
             text-align: center;
-            margin-top: 150px;
+            margin: 145px auto 0;
             color: @jumbotron-font-color;
+            background-color: transparent;
+            border: 0;
+            font-size: 35px;
+            width: 80%;
+        }
+
+        ::placeholder {
+            color: fade(@jumbotron-font-color, 60%);
+        }
+
+
+        @media screen and (min-width: 768px) {
+            input {
+                font-size: 60px;
+            }
         }
     }
 
@@ -30,6 +47,13 @@
 
     .submit-article {
         margin: 20px 10px;
+    }
+
+
+
+    .ui-select-bootstrap .ui-select-choices-row.active>span {
+        color: @light-focus-font-color;
+        background-color: @main-color;
     }
 
 }

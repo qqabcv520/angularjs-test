@@ -4,17 +4,15 @@
 
 import TagLoadService from "./TagLoadService";
 import * as angular from "angular";
-import TagListLoadService from "./TagListLoadService";
 
 export default angular.module("tagLoad", ["restangular"])
     .service("TagLoadService", TagLoadService)
-    .service("TagListLoadService", TagListLoadService)
     .name;
 
 
 
 
 export interface ITag {
-    id: number;
+    id?: number;
     name: string;
 }

@@ -11,6 +11,7 @@ const articleListHtml: string = require('../../components/articleList/articleLis
 const articleDetailHtml: string = require('../../components/articleDetail/articleDetail.html');
 const articleEditHtml: string = require('../../components/articleEdit/articleEdit.html');
 const tagListHtml: string = require('../../components/tagList/tagList.html');
+const tagArticleHtml: string = require('../../components/tagArticle/tagArticle.html');
 const loginHtml: string = require('../../components/login/login.html');
 
 /*@ngInject*/
@@ -41,6 +42,12 @@ export default function appRoute($stateProvider: IStateProvider,
             url: '/tagList',
             template: tagListHtml
             // controller: 'TagListCtrl'
+        })
+        .state('home.tagArticle', {
+            url: '/tagArticle',
+            template: tagArticleHtml,
+            controller: 'TagArticleCtrl',
+            controllerAs: 'vm',
         })
         .state('home.login', {
             url: '/login',

@@ -1,9 +1,9 @@
 /**
  * Created by 米饭 on 2017-03-05.
  */
-
-// import "../../node_modules/bootstrap/less/bootstrap.less"
+// import "../commons/bootstrapLoad/styleLoader!./bootstrapConfig.js";
 import "../styles/app.less";
+
 
 import * as angular from "angular";
 

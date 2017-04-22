@@ -5,10 +5,9 @@
 
 import * as angular from "angular";
 import ArticleLoadService from "./ArticleLoadService";
-import ArticleListLoadService from "./ArticleListLoadService";
+import {ITag} from "../tagLoad/tagLoad";
 
 export default angular.module("articleLoad", ["restangular"])
-    .service("ArticleListLoadService", ArticleListLoadService)
     .service("ArticleLoadService", ArticleLoadService)
     .name;
 
@@ -17,16 +16,16 @@ export default angular.module("articleLoad", ["restangular"])
 
 
 export interface IArticle {
-    id: number;
+    id?: number;
     title: string;
     content: string;
-    author: string;
-    create: Date;
-    reprintedFrom: string;
-    clickCnt: number;
+    author?: string;
+    create?: Date;
+    reprintedFrom?: string;
+    clickCnt?: number;
     outline: string;
-    titleImg: string;
-    tags: Array<string>;
+    titleImg?: string;
+    tags?: Array<ITag>;
 }
 
 

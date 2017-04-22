@@ -1,6 +1,6 @@
 <div class="article-detail">
     <header class="jumbotron jumbotron-header" >
-        <h1 ng-bind="vm.loader.article.title"></h1>
+        <h1 ng-bind="vm.article.title"></h1>
     </header>
     <div class="container-fluid content">
         <div class="row">
@@ -15,18 +15,11 @@
                 <div class="article-footer">
                     <div class="article-tag pull-left">
                         <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
-                        <a href="" class="label label-transparent">UI</a>
-                        <a href="" class="label label-transparent">Angular</a>
-                        <a href="" class="label label-transparent">UI</a>
-                        <a href="" class="label label-transparent">Angular</a>
-                        <a href="" class="label label-transparent">UI</a>
-                        <a href="" class="label label-transparent">Angular</a>
-                        <a href="" class="label label-transparent">UI</a>
-                        <a href="" class="label label-transparent">Angular</a>
+                        <a href="" class="label label-transparent" data-ng-repeat="tag in vm.article.tags" data-ng-bind="tag.name"></a>
                     </div>
                     <span class="article-info pull-right">
-                        <span ng-bind="vm.loader.article.author"></span>
-                        <span ng-bind="vm.loader.article.create|date:'yyyy-MM-dd'"></span>
+                        <span ng-bind="vm.article.author"></span>
+                        <span ng-bind="vm.article.create|date:'yyyy-MM-dd'"></span>
                     </span>
                 </div>
             </div>

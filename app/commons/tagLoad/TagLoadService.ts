@@ -24,4 +24,22 @@ export default class TagLoadService {
         return this.Restangular.one("tags", tagId).get<ITag>();;
     }
 
+    /**
+     * 加载tags
+     * @param param {query, offset, limit}
+     * @returns {ICollectionPromise<ITag>}
+     */
+    loadList(param?: {query?: string, offset?: number, limit?: number}): IPromise<Array<ITag>> {
+        return this.Restangular.all("tags").getList<ITag>(param);
+    }
+
+    /**
+     * 加载tag包含的文章
+     * @param tagId
+     * @param param {query, offset, limit}
+     * @returns {ICollectionPromise<ITag>}
+     */
+    loadArticleList(tagId: number, param?: {query?: string, offset?: number, limit?: number}): IPromise<Array<ITag>> {
+        return this.Restangular.one("tags", tagId).all("articles").getList<ITag>(param);
+    }
 }

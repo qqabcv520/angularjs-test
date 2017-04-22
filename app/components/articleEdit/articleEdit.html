@@ -1,28 +1,26 @@
 <div class="article-edit">
     <header class="jumbotron jumbotron-header" >
-        <h1 ></h1>
+        <input type="text" data-ng-model="vm.article.title" placeholder="{{'请输入标题'|translate}}">
     </header>
 
     <div class="container-fluid content">
         <div class="row">
             <div class="col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
-                <div class="editor-article" data-ng-model="editorContent" content-editable >
-                </div>
+                <div class="editor-article" data-ng-model="vm.article.content" editor ></div>
 
-                <ui-select  class="tag-select" ng-model="selected.value" theme="bootstrap" multiple limit="5" tagging="vm.tagging" tagging-label="（新建）">
+                <ui-select  class="tag-select" ng-model="vm.selectedTags" theme="bootstrap" multiple limit="5" tagging="vm.tagging" tagging-label="（新建）">
                     <ui-select-match placeholder="{{'最多选择五项'|translate}}">
-                        <span ng-bind="$item.name"></span>
+                        <span data-ng-bind="$item.name"></span>
                     </ui-select-match>
-                    <ui-select-choices repeat="tag in vm.loader.tags | filter: $select.search">
-                        <span ng-if="!tag.isTag" ng-bind-html="vm.$sce.trustAsHtml(tag.name) | highlight: $select.search"></span>
-                        <span ng-if="tag.isTag" ng-bind-html="vm.$sce.trustAsHtml(tag.name)+$select.taggingLabel"></span>
+                    <ui-select-choices repeat="tag in vm.tags | filter: $select.search">
+                        <span data-ng-if="!tag.isTag" data-ng-bind-html="tag.name | highlight: $select.search"></span>
+                        <span data-ng-if="tag.isTag" data-ng-bind-html="tag.name + $select.taggingLabel"></span>
                     </ui-select-choices>
                 </ui-select>
 
-                <button class="btn btn-main submit-article" translate>提交文章</button>
+                <button class="btn btn-main submit-article" data-ng-click="vm.submit()" translate>提交文章</button>
                 <button class="btn btn-default submit-article" translate>预览文章</button>
             </div>
         </div>
     </div>
-
 </div>
