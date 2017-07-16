@@ -10,12 +10,12 @@ import {IArticle} from "../../commons/articleLoad/articleLoad";
 /*@ngInject*/
 export default class TagArticleCtrl {
     //
-    // articles: Array<IArticle>;
+    // tags: Array<IArticle>;
     //
     //
     // constructor($uibPosition: any, $document: IDocumentService, TagArticleService: TagArticleService) {
-    //     if(TagArticleService.articles.length == 0) {//初始加载
-    //         this.articles = TagArticleService.load();
+    //     if(TagArticleService.tags.length == 0) {//初始加载
+    //         this.tags = TagArticleService.load();
     //     }
     //
     //     let lastDate = 0;

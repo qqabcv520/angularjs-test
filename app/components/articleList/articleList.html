@@ -9,7 +9,7 @@
                 <div class="panel panel-article" data-ng-repeat="article in vm.articles">
                     <div class="panel-heading">
                         <h3 class="article-title">
-                            <a ui-sref="home.articleDetail({articleId:article.id})" ng-bind="article.title"></a>
+                            <a ui-sref="home.articleDetail({articleId:article.id})" data-ng-bind="article.title"></a>
                         </h3>
                     </div>
                     <div class="panel-body" data-ng-bind="article.outline"></div>

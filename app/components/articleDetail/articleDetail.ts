@@ -5,9 +5,11 @@
 
 import * as angular from "angular";
 
+import articleLoad from '../../commons/articleLoad/articleLoad';
+import reviewLoad from '../../commons/reviewLoad/reviewLoad';
 import ArticleDetailCtrl from './ArticleDetailCtrl';
 
-export  default angular.module('articleDetail', ['restangular'])
+export  default angular.module('articleDetail', [articleLoad, reviewLoad])
     .controller('ArticleDetailCtrl',  ArticleDetailCtrl)
     .name;
 

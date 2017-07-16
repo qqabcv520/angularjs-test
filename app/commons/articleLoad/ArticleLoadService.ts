@@ -25,7 +25,7 @@ export default class ArticleLoadService {
      * 加载文章列表到articles
      * @returns {ICollectionPromise<IArticle> | null} 如果loadState为loading，则不会继续加载，返回null
      */
-    loadList(param: {offset?: number, limit?: number, query?: string}): ICollectionPromise<IArticle> {
+    loadList(param: {page?: number, size?: number, query?: string}): ICollectionPromise<IArticle> {
         return this.Restangular.all("articles").getList<IArticle>(param);
     }
 

@@ -9,7 +9,7 @@ import articleLoad from '../../commons/articleLoad/articleLoad';
 import TagArticleCtrl from "./TagArticleCtrl";
 import TagArticleService from "./TagArticleService";
 
-export default angular.module('tagArticle', ['ui.bootstrap', 'restangular', articleLoad])
+export default angular.module('tagArticle', ['ui.bootstrap', articleLoad])
     .controller('ArticleListCtrl',  TagArticleCtrl)
     .controller('TagArticleService',  TagArticleService)
     .name;

@@ -1,15 +1,14 @@
 <div class="article-detail">
-    <header class="jumbotron jumbotron-header" >
-        <h1 ng-bind="vm.article.title"></h1>
+    <header class="jumbotron jumbotron-header" data-ng-style="{'background-image': 'url('+vm.article.titleImg+')'}">
+        <h1 data-ng-bind="vm.article.title"></h1>
     </header>
     <div class="container-fluid content">
         <div class="row">
             <div class="col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
-                <div class="article-content" ng-bind-html="vm.$sce.trustAsHtml(vm.article.content)">
+                <div class="article-content" data-ng-bind-html="vm.$sce.trustAsHtml(vm.article.content)">
                 </div>
             </div>
         </div>
-
         <div class="row">
             <div class="col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
                 <div class="article-footer">
@@ -18,8 +17,8 @@
                         <a href="" class="label label-transparent" data-ng-repeat="tag in vm.article.tags" data-ng-bind="tag.name"></a>
                     </div>
                     <span class="article-info pull-right">
-                        <span ng-bind="vm.article.author"></span>
-                        <span ng-bind="vm.article.create|date:'yyyy-MM-dd'"></span>
+                        <span data-ng-bind="vm.article.author"></span>
+                        <span data-ng-bind="vm.article.create|date:'yyyy-MM-dd'"></span>
                     </span>
                 </div>
             </div>
@@ -27,11 +26,28 @@
         <div class="row">
             <div class="col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
                 <div class="article-discuss">
-                    <div class="panel panel-discuss">
-                        <div class="panel-heading">
-
-                        </div>
-                        <div class="panel-body">
+                    <div class="discuss-title">
+                        <h3><span data-ng-bind="vm.reviewList.length">50</span>条评论</h3>
+                    </div>
+                    <div class="discuss clearfix" data-ng-repeat="review in vm.reviewList">
+                        <img class="discuss-avatar pull-left" src="http://cdn2.jianshu.io/assets/default_avatar/avatar_default-78d4d1f68984cd6d4379508dd94b4210.png">
+                        <div class="discuss-right pull-left">
+                            <div class="discuss-info">
+                                <span>1</span>楼
+                                <a class="info-username" href="" data-ng-bind="review.user.username"></a>
+                                <span data-ng-bind="review.createTime | date: 'yyyy-MM-dd'">2017-07-06</span>
+                            </div>
+                            <div class="discuss-body" data-ng-bind="review.content">
+                            </div>
+                            <div class="discuss-sub-list">
+                                <div class="discuss-sub" data-ng-repeat="childReview in review.reviews">
+                                    <div class="discuss-info">
+                                        <a class="info-username" href="" data-ng-bind="childReview.user.username"></a>
+                                        <span data-ng-bind="childReview.createTime | date: 'yyyy-MM-dd'">2017-07-06</span>
+                                    </div>
+                                    <div class="discuss-body" data-ng-bind="childReview.content"></div>
+                                </div>
+                            </div>
 
                         </div>
                     </div>

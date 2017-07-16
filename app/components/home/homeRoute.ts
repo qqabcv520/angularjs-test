@@ -40,8 +40,9 @@ export default function appRoute($stateProvider: IStateProvider,
         })
         .state('home.tagList', {
             url: '/tagList',
-            template: tagListHtml
-            // controller: 'TagListCtrl'
+            template: tagListHtml,
+            controller: 'TagListCtrl',
+            controllerAs: 'vm'
         })
         .state('home.tagArticle', {
             url: '/tagArticle',

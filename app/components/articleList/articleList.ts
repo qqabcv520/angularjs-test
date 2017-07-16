@@ -9,7 +9,7 @@ import ArticleListCtrl from './ArticleListCtrl';
 import articleLoad from '../../commons/articleLoad/articleLoad';
 import ArticleListService from "./ArticleListService";
 
-export default angular.module('articleList', ['ui.bootstrap', 'restangular', articleLoad])
+export default angular.module('articleList', ['ui.bootstrap', articleLoad])
     .controller('ArticleListCtrl',  ArticleListCtrl)
     .service('ArticleListService',  ArticleListService)
     .name;

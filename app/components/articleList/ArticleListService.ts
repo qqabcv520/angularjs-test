@@ -6,7 +6,7 @@ import {ICollection, ICollectionPromise} from "restangular";
 export default class ArticleListService {
 
     private _loadState: LoadState = LoadState.ready;
-    private _offset: number = 0;
+    private _page: number = 0;
 
     /**
      * 已加载的文章列表
@@ -20,7 +20,7 @@ export default class ArticleListService {
      * 一次加载多少
      * @type {number}
      */
-    limit: number = 10;
+    size: number = 10;
 
 
 
@@ -36,8 +36,8 @@ export default class ArticleListService {
      * 已经加载到了多少
      * @returns {number}
      */
-    get offset(): number {
-        return this._offset;
+    get page(): number {
+        return this._page;
     }
 
     /**
@@ -61,9 +61,8 @@ export default class ArticleListService {
             return null;
         }
         this._loadState = LoadState.loading;
-        let promise = this._loader.loadList({offset: this.offset, limit: this.limit});
+        let promise = this._loader.loadList({page: this.page, size: this.size});
         promise.then((result: Array<IArticle>) => {
-
             if (result.length === 0) {
                 this._loadState = LoadState.over;
                 return;
@@ -71,7 +70,7 @@ export default class ArticleListService {
             for (let article of result) {
                 this._articles.push(article);
             }
-            this._offset += this.limit;
+            this._page++;
             this._loadState = LoadState.ready;
 
         }).catch(() => {
