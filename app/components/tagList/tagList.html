@@ -1,6 +1,6 @@
 <div class="tag-list">
     <header class="jumbotron jumbotron-header">
-        <h1 translate>话题</h1>
+        <h1 class="jumbotron-title" translate>话题</h1>
     </header>
 
     <div class="container content">
@@ -11,7 +11,7 @@
                         <span class="tag-title" data-ng-bind="tags.letter"></span>
                     </div>
                     <div class="panel-body">
-                        <a href="" class="label label-transparent" data-ng-repeat="tag in tags.data" data-ng-bind="tag"></a>
+                        <a data-ng-repeat="tag in tags.data" ui-sref="home.tagArticle(tag)" class="label label-transparent" data-ng-bind="tag.name"></a>
                     </div>
                 </div>
             </div>

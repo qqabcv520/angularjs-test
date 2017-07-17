@@ -11,7 +11,7 @@ import TagLoadService from "../../commons/tagLoad/TagLoadService";
 /*@ngInject*/
 export default class TagArticleService {
     // private _loadState: LoadState = LoadState.ready;
-    // private _offset: number = 0;
+    // private _page: number = 0;
     //
     // /**
     //  * 已加载的文章列表
@@ -42,13 +42,13 @@ export default class TagArticleService {
     //  * @returns {number}
     //  */
     // get page(): number {
-    //     return this._offset;
+    //     return this._page;
     // }
     //
     // /**
     //  * 加载完后被装载数据的对象
     //  */
-    // get tags(): Array<IArticle> {
+    // get articles(): Array<IArticle> {
     //     return this._articles;
     // }
     //
@@ -66,7 +66,7 @@ export default class TagArticleService {
     //         return null;
     //     }
     //     this._loadState = LoadState.loading;
-    //     let promise = this._loader.loadList({page: this.page, size: this.size});
+    //     let promise = this._loader.loadArticleList({page: this.page, size: this.size});
     //     promise.then((result: Array<IArticle>) => {
     //
     //         if (result.length === 0) {
@@ -76,7 +76,7 @@ export default class TagArticleService {
     //         for (let article of result) {
     //             this._articles.push(article);
     //         }
-    //         this._offset += this.size;
+    //         this._page += this.size;
     //         this._loadState = LoadState.ready;
     //
     //     }).catch(() => {
@@ -84,7 +84,7 @@ export default class TagArticleService {
     //     });
     //     return promise;
     // }
-
+    //
     // /**
     //  * 回复初始
     //  */

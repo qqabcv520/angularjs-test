@@ -1,13 +1,13 @@
-<div class="tag-list">
+<div class="tag-article">
     <header class="jumbotron jumbotron-header">
-        <h1 >Angular</h1>
+        <h1 class="jumbotron-title" data-ng-bind="vm.tag.name"></h1>
     </header>
 
 
     <div class="container-fluid content">
         <div class="row">
             <div class="col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
-                <div class="panel panel-article" data-ng-repeat="article in vm.loader.articles">
+                <div class="panel panel-article" data-ng-repeat="article in vm.articles">
                     <div class="panel-heading">
                         <h3 class="article-title">
                             <a ui-sref="home.articleDetail({articleId:article.id})" ng-bind="article.title"></a>

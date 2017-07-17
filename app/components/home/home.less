@@ -1,12 +1,12 @@
 
 @import url(../../styles/appVariables);
 
-@import url(../tagList/tagList);
 @import url(../login/login);
-
+@import url(../tagList/tagList);
 @import url(../articleList/articleList);
 @import url(../articleDetail/articleDetail);
 @import url(../articleEdit/articleEdit);
+@import url(../tagArticle/tagArticle);
 
 
 //修复UI Bootstrap的css问题
@@ -26,7 +26,23 @@ body {
 }
 
 
+.jumbotron-header {
+    background: no-repeat center;
+    background-size: cover;
+    height: 300px;
+    .jumbotron-title {
+        text-align: center;
+        margin-top: 100px;
+        color: @jumbotron-font-color;
+    }
 
+    @media screen and (min-width: 768px) {
+        height: 500px;
+        .jumbotron-title {
+            margin: 160px 50px;
+        }
+    }
+}
 
 .label-transparent {
     background-color: transparent;

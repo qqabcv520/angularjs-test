@@ -5,12 +5,12 @@
 
 import * as angular from "angular";
 
-import articleLoad from '../../commons/articleLoad/articleLoad';
+import tagLoad from '../../commons/tagLoad/tagLoad';
 import TagArticleCtrl from "./TagArticleCtrl";
 import TagArticleService from "./TagArticleService";
 
-export default angular.module('tagArticle', ['ui.bootstrap', articleLoad])
-    .controller('ArticleListCtrl',  TagArticleCtrl)
+export default angular.module('tagArticle', ['ui.bootstrap', tagLoad])
+    .controller('TagArticleCtrl',  TagArticleCtrl)
     .controller('TagArticleService',  TagArticleService)
     .name;
 

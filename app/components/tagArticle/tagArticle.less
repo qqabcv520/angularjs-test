@@ -1,0 +1,75 @@
+
+
+@import url(../../styles/appVariables);
+
+
+.tag-article {
+
+
+    .jumbotron-header {
+        background: url("../../images/tagArticle.jpg");
+    }
+
+    .panel-article {
+        > .panel-heading {
+            padding-bottom: 0;
+
+            > .article-title {
+                position: relative;
+                padding-left: 10px;
+            }
+
+            > .article-title > a {
+                color: @article-font-color-importance;
+
+                @media (max-width: 750px) {
+                    font-size: 20px;
+                }
+
+                &:hover,
+                &:focus {
+                    color: @main-color-focus;
+                    text-decoration: none;
+                }
+                &:visited {
+                    color: @article-font-color;
+                }
+                &:before {
+                    background-color: @main-color;
+                    content: '';
+                    margin-right: 4px;
+                    height: 90%;
+                    width: 2px;
+                    top: 5%;
+                    left: 0;
+                    position: absolute;
+                }
+            }
+        }
+        > .panel-body {
+            color: @article-font-color;
+            padding-top: 8px;
+            padding-bottom: 8px;
+        }
+        > .panel-tag {
+            padding: 0 15px;
+            color: @article-font-color-unimportance;
+
+            > .article-info {
+                float: right;
+                padding: .1em .6em;
+
+                > a {
+                    color: @article-font-color-unimportance;
+                }
+            }
+        }
+
+    }
+
+    .panel-loading {
+        text-align: center;
+        line-height: 100px;
+        color: @main-color;
+    }
+}

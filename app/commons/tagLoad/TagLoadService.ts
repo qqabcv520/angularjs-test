@@ -3,8 +3,9 @@
  */
 
 
-import {IPromise, IService} from "restangular";
+import {ICollectionPromise, IPromise, IService} from "restangular";
 import {ITag} from "./tagLoad";
+import {IArticle} from "../articleLoad/articleLoad";
 
 /*@ngInject*/
 export default class TagLoadService {
@@ -21,7 +22,7 @@ export default class TagLoadService {
      * @returns {IPromise<ITag>}
      */
     load(tagId: number): IPromise<ITag> {
-        return this.Restangular.one("tags", tagId).get<ITag>();;
+        return this.Restangular.one("tags", tagId).get<ITag>();
     }
 
     /**
@@ -29,7 +30,7 @@ export default class TagLoadService {
      * @param param {query, offset, size}
      * @returns {ICollectionPromise<ITag>}
      */
-    loadList(param?: {query?: string, page?: number, size?: number}): IPromise<Array<ITag>> {
+    loadList(param?: {query?: string, page?: number, size?: number}): ICollectionPromise<ITag> {
         return this.Restangular.all("tags").getList<ITag>(param);
     }
 
@@ -37,9 +38,9 @@ export default class TagLoadService {
      * 加载tag包含的文章
      * @param tagId
      * @param param {query, offset, size}
-     * @returns {ICollectionPromise<ITag>}
+     * @returns {ICollectionPromise<IArticle>}
      */
-    loadArticleList(tagId: number, param?: {query?: string, page?: number, size?: number}): IPromise<Array<ITag>> {
-        return this.Restangular.one("tags", tagId).all("tags").getList<ITag>(param);
+    loadArticleList(tagId: number|undefined, param?: {query?: string, page?: number, size?: number}): ICollectionPromise<IArticle> {
+        return this.Restangular.one("tags", tagId).all("articles").getList<IArticle>(param);
     }
 }
