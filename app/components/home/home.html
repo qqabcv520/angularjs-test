@@ -30,7 +30,7 @@
                 <a ui-sref=".articleEdit" translate>发布</a>
             </li>
             <li >
-                <a ui-sref=".login" ng-bind=""></a>
+                <a  ng-bind="vm.UserService.username"></a>
             </li>
         </ul>
     </div>
@@ -52,20 +52,20 @@
             <!--<div class="row">-->
                 <!--<div class="col-sm-4">-->
                     <!--<ul class="group">-->
-                        <!--<li><a href="#" title="">综合业务平台</a></li>-->
-                        <!--<li><a href="#" title="">教务信息</a></li>-->
+                        <!--<li><a href="#" title="">123</a></li>-->
+                        <!--<li><a href="#" title="">456</a></li>-->
                     <!--</ul>-->
                 <!--</div>-->
                 <!--<div class="col-sm-4">-->
                     <!--<ul class="group">-->
-                        <!--<li><a href="#" title="">校园门户</a></li>-->
-                        <!--<li><a href="#" title="">协同办公</a></li>-->
+                        <!--<li><a href="#" title="">123</a></li>-->
+                        <!--<li><a href="#" title="">456</a></li>-->
                     <!--</ul>-->
                 <!--</div>-->
                 <!--<div class="col-sm-4">-->
                     <!--<ul class="group">-->
-                        <!--<li><a href="#" title="">综合业务平台</a></li>-->
-                        <!--<li><a href="#" title="">教务信息</a></li>-->
+                        <!--<li><a href="#" title="">123</a></li>-->
+                        <!--<li><a href="#" title="">456</a></li>-->
                     <!--</ul>-->
                 <!--</div>-->
             <!--</div>-->
@@ -76,13 +76,20 @@
             Copyright &copy; 2017 <span translate>米饭博客</span>
             |
         </span>
+        <span>
+            <a href="https://github.com/qqabcv520/mifanBlog" target="_blank">[<span translate>博客源码</span>]</a>
+            |
+        </span>
         <span ng-if="vm.TokenService.token">
             <a href="" target="_blank">[<span translate>后台管理</span>]</a>
             |
         </span>
-
         <span>
-            <a href="" ng-click="vm.switchLang()">[<span translate>English</span>]</a>
+            <a href="" ng-click="vm.switchLang()">[<span translate>English version</span>]</a>
         </span>
     </div>
 </footer>
+
+<div class="siderbar" title="返回顶部" ng-if="!vm.isTop" ng-click="vm.top()">
+    TOP
+</div>

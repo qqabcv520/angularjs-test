@@ -15,7 +15,7 @@
                     <div class="panel-body" data-ng-bind="article.outline"></div>
                     <div class="panel-tag">
                         <div class="article-tag pull-left">
-                            <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
+                            <span class="glyphicon glyphicon-tag"></span>
                             <a class="label label-transparent" data-ng-repeat="tag in article.tags" ui-sref="home.tagArticle(tag)" data-ng-bind="tag.name"></a>
                         </div>
                         <span class="article-info pull-right">
@@ -25,8 +25,8 @@
                         <div class="clearfix"></div>
                     </div>
                 </div>
-                <div data-ng-if="vm.isLoadState('loading') || vm.isLoadState('ready')" class="panel-loading">加载中……</div>
-                <div data-ng-if="vm.isLoadState('over')" class="panel-loading">没有更多了</div>
+                <div data-ng-if="vm.isLoadState('loading') || vm.isLoadState('ready')" class="panel-loading" translate>加载中……</div>
+                <div data-ng-if="vm.isLoadState('over')" class="panel-loading" translate>没有更多了</div>
             </div>
         </div>
     </div>

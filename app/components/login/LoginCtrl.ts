@@ -4,7 +4,8 @@
 
 
 import UserService, {ILoginParam} from "../../commons/user/UserService";
-import {IStateService} from "@types/angular-ui-router";
+import {ui} from "angular";
+import IStateService = ui.IStateService;
 
 /*@ngInject*/
 export default class LoginCtrl {

@@ -2,7 +2,8 @@
  * Created by 米饭 on 2017-04-01.
  */
 
-import {IStateParamsService} from "@types/angular-ui-router";
+import {ui} from "angular";
+import IStateParamsService = ui.IStateParamsService;
 import ArticleLoadService from "../../commons/articleLoad/ArticleLoadService";
 import {IArticle} from "../../commons/articleLoad/articleLoad";
 import {ISCEService} from "angular";
@@ -20,6 +21,5 @@ export default class ArticleDetailCtrl {
                 ReviewLoadService: ReviewLoadService) {
         this.article = ArticleLoadService.load($stateParams.articleId).$object;
         this.reviewList = ReviewLoadService.loadArticleReviews($stateParams.articleId, {page: 0, size: 5}).$object;
-        console.log(this.reviewList);
     }
 }

@@ -260,7 +260,30 @@ body {
 }
 
 
+
 .home-content {
     min-height: 700px;
     //transition: height 20s;
+}
+
+.siderbar {
+    position: fixed;
+    right: 20px;
+    bottom: 50px;
+    z-index: 100;
+    font-weight: 900;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    text-align: center;
+    color: @siderbar-text;
+    border: 1px @siderbar-border solid;
+    margin-top: -1px;
+    background-color: @siderbar-background;
+    cursor: pointer;
+    padding: 0;
+}
+
+.siderbar:hover {
+    color: @main-color;
 }

@@ -4,7 +4,10 @@
 
 
 import {IDocumentService, IPromise, IQService, IRootScopeService} from "angular";
-import {IStateService} from "@types/angular-ui-router";
+import {ui} from "angular";
+import IStateService = ui.IStateService;
+import {animate} from "angular";
+import IAnimateService = animate.IAnimateService;
 import {translate} from "angular";
 import ITranslateService = translate.ITranslateService;
 import {INavbarConfig} from "./home";
@@ -19,43 +22,33 @@ export default class HomeCtrl {
 
     isNavCollapsed: boolean;//collapse是否折叠
     isNavTransparent: boolean;//导航条是否透明
+    isTop: boolean;//导航条是否透明
 
-    /**
-     *
-     * @param {angular.IRootScopeService} $rootScope
-     * @param {angular.IDocumentService} $document
-     * @param {angular.IQService} $q
-     * @param {"angular".translate.ITranslateService} $translate
-     * @param {IStateService} $state
-     * @param {INavbarConfig} navbar 导航条透明位置
-     * @param LangService
-     * @param {UserService} UserService
-     */
     constructor(private $rootScope: IRootScopeService,
                 private $document: IDocumentService,
                 private $q: IQService,
                 private $translate: ITranslateService,
+                private $animate: IAnimateService,
                 private $state: IStateService,
                 private navbar: INavbarConfig,
                 private LangService: LangService,
-                private UserService: UserService) {
+                private UserService: UserService,) {
 
         this.initState = true;
         this.isNavCollapsed = true;
-        this.isNavTransparent = false;
+        this.isNavTransparent = true;
+        this.isTop = true;
 
-
-        this.isNavTransparent = document.body.scrollTop < navbar.headerHeight;
 
         $document.bind("scroll", () => {
-            this.changeNavBg();
+            this.changeScrollTop();
             $rootScope.$apply();
         });
 
         $rootScope.$on("$locationChangeStart", () => {//路径变化时
             document.body.scrollTop = 0;
             this.isNavCollapsed = true;
-            this.changeNavBg();
+            this.changeScrollTop();
         });
 
     }
@@ -88,12 +81,25 @@ export default class HomeCtrl {
     /**
      * 根据现在位置设置导航栏背景色
      */
-    changeNavBg(): void {
+    changeScrollTop(): void {
 
-        if (this.$document.scrollTop() >= this.navbar.headerHeight && this.isNavTransparent) {
+        let scrollTop = this.$document.scrollTop() || 0;
+
+        if (scrollTop >= this.navbar.headerHeight && this.isNavTransparent) {
             this.isNavTransparent = false;
-        } else if (this.$document.scrollTop() < this.navbar.headerHeight && !this.isNavTransparent) {
+        } else if (scrollTop < this.navbar.headerHeight && !this.isNavTransparent) {
             this.isNavTransparent = true;
         }
+
+        if (scrollTop >= 500 && this.isTop) {
+            this.isTop = false;
+        } else if (scrollTop < 500 && !this.isTop) {
+            this.isTop = true;
+        }
+    }
+
+
+    top(): void {
+        this.$document.scrollTop(0);
     }
 }

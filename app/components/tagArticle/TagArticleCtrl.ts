@@ -4,12 +4,12 @@
 
 
 import {IDocumentService} from "angular";
-import TagArticleService from "./TagArticleService";
 import {IArticle} from "../../commons/articleLoad/articleLoad";
 import {LoadState} from "../articleList/ArticleListService";
 import {ICollectionPromise} from "restangular";
 import TagLoadService from "../../commons/tagLoad/TagLoadService";
-import {IStateParamsService} from "@types/angular-ui-router";
+import {ui} from "angular";
+import IStateParamsService = ui.IStateParamsService;
 import {ITag} from "../../commons/tagLoad/tagLoad";
 
 /*@ngInject*/

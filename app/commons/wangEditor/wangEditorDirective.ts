@@ -6,7 +6,7 @@
 
 import * as angular from "angular";
 
-import wangEditor = require("./js/wangEditor");
+import WangEditor = require("./js/wangEditor");
 import {IAttributes, INgModelController, IScope} from "angular";
 
 
@@ -39,7 +39,7 @@ function contentEditable() {
             }
 
             // 创建编辑器
-            let editor = new wangEditor(element);
+            let editor = new WangEditor(element);
             editor.config.menus = [
                 "bold", "italic", "strikethrough", "head", "|",
                 "quote", "unorderlist", "orderlist", "alignleft", "aligncenter", "alignright", "|",

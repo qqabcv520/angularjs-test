@@ -2,7 +2,7 @@
   "米饭博客": "mifan blog",
   "文章": "article",
   "话题": "tag",
-  "English": "中文",
+  "English version": "中文版",
   "友情链接": "friend link",
   "后台管理": "management",
   "登录": "login",
@@ -12,5 +12,8 @@
   "密码": "password",
   "请选择最多5个标签": "Please select up to 5 tags",
   "x条评论": "{{num}}comments",
-  "x楼": "{{num}}floor"
+  "x楼": "{{num}}floor",
+  "博客源码": "Blog source code",
+  "没有更多了": "No more",
+  "加载中……": "loading……"
 }
