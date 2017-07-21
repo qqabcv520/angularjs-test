@@ -5,6 +5,7 @@
 
 import * as angular from "angular";
 
+import user from "../../commons/user/user";
 import login from '../login/login';
 import articleList from '../articleList/articleList';
 import articleEdit from '../articleEdit/articleEdit';
@@ -16,7 +17,7 @@ import HomeCtrl from './HomeCtrl';
 import homeRoute from './homeRoute';
 
 
-export default angular.module('home', ['ngAnimate', 'ui.bootstrap', 'ui.router',
+export default angular.module('home', ['ngAnimate', 'ui.bootstrap', 'ui.router', user,
     login, articleList, articleEdit, articleDetail, tagList, tagArticle])
 
     .controller('HomeCtrl',  HomeCtrl)

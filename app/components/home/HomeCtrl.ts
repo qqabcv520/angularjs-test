@@ -8,6 +8,8 @@ import {IStateService} from "@types/angular-ui-router";
 import {translate} from "angular";
 import ITranslateService = translate.ITranslateService;
 import {INavbarConfig} from "./home";
+import UserService from "../../commons/user/UserService";
+import LangService from "../../commons/lang/LangService";
 
 /*@ngInject*/
 export default class HomeCtrl {
@@ -20,19 +22,23 @@ export default class HomeCtrl {
 
     /**
      *
-     * @param $rootScope
-     * @param $document
-     * @param $q
-     * @param $translate
-     * @param $state
-     * @param navbar 导航条透明位置
+     * @param {angular.IRootScopeService} $rootScope
+     * @param {angular.IDocumentService} $document
+     * @param {angular.IQService} $q
+     * @param {"angular".translate.ITranslateService} $translate
+     * @param {IStateService} $state
+     * @param {INavbarConfig} navbar 导航条透明位置
+     * @param LangService
+     * @param {UserService} UserService
      */
     constructor(private $rootScope: IRootScopeService,
                 private $document: IDocumentService,
                 private $q: IQService,
                 private $translate: ITranslateService,
                 private $state: IStateService,
-                private navbar: INavbarConfig) {
+                private navbar: INavbarConfig,
+                private LangService: LangService,
+                private UserService: UserService) {
 
         this.initState = true;
         this.isNavCollapsed = true;
@@ -47,6 +53,7 @@ export default class HomeCtrl {
         });
 
         $rootScope.$on("$locationChangeStart", () => {//路径变化时
+            document.body.scrollTop = 0;
             this.isNavCollapsed = true;
             this.changeNavBg();
         });
@@ -70,12 +77,12 @@ export default class HomeCtrl {
      * 切换语言
      */
     switchLang(): void {
-        if (this.$rootScope.currentLang !== "en-us") {
-            this.$rootScope.currentLang = "en-us";
+        if (this.LangService.currentLang !== "en-us") {
+            this.LangService.currentLang = "en-us";
         } else {
-            this.$rootScope.currentLang = "zh-cn";
+            this.LangService.currentLang = "zh-cn";
         }
-        this.$translate.use(this.$rootScope.currentLang).then(() => this.$state.reload())
+        this.$translate.use(this.LangService.currentLang).then(() => this.$state.reload())
     }
 
     /**

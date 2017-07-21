@@ -3,18 +3,22 @@
  */
 
 
-import TokenService, {ILoginParam} from "../../commons/token/TokenService";
+import UserService, {ILoginParam} from "../../commons/user/UserService";
+import {IStateService} from "@types/angular-ui-router";
 
 /*@ngInject*/
 export default class LoginCtrl {
 
 
-    constructor(private TokenService: TokenService) {
+    constructor(private UserService: UserService,
+                private $state: IStateService) {
     }
 
     submit(loginParam: ILoginParam): void {
-        console.log(loginParam);
-        this.TokenService.login(loginParam);
+        this.UserService.login(loginParam).then(()=>{
+            this.$state.go("home.articleList");
+
+        });
     }
 
 }

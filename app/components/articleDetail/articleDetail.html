@@ -14,7 +14,7 @@
                 <div class="article-footer">
                     <div class="article-tag pull-left">
                         <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
-                        <a href="" class="label label-transparent" data-ng-repeat="tag in vm.article.tags" data-ng-bind="tag.name"></a>
+                        <a class="label label-transparent" data-ng-repeat="tag in vm.article.tags" ui-sref="home.tagArticle(tag)" data-ng-bind="tag.name"></a>
                     </div>
                     <span class="article-info pull-right">
                         <span data-ng-bind="vm.article.author"></span>
@@ -27,13 +27,13 @@
             <div class="col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
                 <div class="article-discuss">
                     <div class="discuss-title">
-                        <h3><span data-ng-bind="vm.reviewList.length">50</span>条评论</h3>
+                        <h3 translate data-translate-values='{num:vm.reviewList.length}'>x条评论</h3>
                     </div>
                     <div class="discuss clearfix" data-ng-repeat="review in vm.reviewList">
                         <img class="discuss-avatar pull-left" src="http://cdn2.jianshu.io/assets/default_avatar/avatar_default-78d4d1f68984cd6d4379508dd94b4210.png">
                         <div class="discuss-right pull-left">
                             <div class="discuss-info">
-                                <span>1</span>楼
+                                <span translate data-translate-values='{num:review.index}'>x楼</span>
                                 <a class="info-username" href="" data-ng-bind="review.user.username"></a>
                                 <span data-ng-bind="review.createTime | date: 'yyyy-MM-dd'">2017-07-06</span>
                             </div>

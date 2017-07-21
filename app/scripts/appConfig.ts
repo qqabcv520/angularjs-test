@@ -6,5 +6,5 @@ import {IProvider} from "restangular";
 
 /*@ngInject*/
 export default function appConfig(RestangularProvider: IProvider) {
-    RestangularProvider.setBaseUrl('//localhost:8080');
+    RestangularProvider.setBaseUrl('https://mifan123.cn:8443');
 }

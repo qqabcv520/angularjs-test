@@ -17,7 +17,7 @@
                     <div class="panel-tag">
                         <div class="article-tag pull-left">
                             <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
-                            <a href="" class="label label-transparent" data-ng-repeat="tag in article.tags" data-ng-bind="tag.name"></a>
+                            <a class="label label-transparent" data-ng-repeat="tag in article.tags" ui-sref="home.tagArticle(tag)" data-ng-bind="tag.name"></a>
                         </div>
                         <span class="article-info pull-right">
 						<span>米饭</span>

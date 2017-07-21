@@ -5,17 +5,17 @@
 
 
 import LocalStorageService from "../localStorage/LocalStorageService";
-import {IService} from "restangular";
+import {IPromise, IService} from "restangular";
 
 /*@ngInject*/
-export default class TokenService {
+export default class UserService {
 
 
     private _token: string | null;
     private _isRemember: boolean;
 
     constructor(private Restangular: IService, private LocalStorageService: LocalStorageService) {
-        this._isRemember = this.LocalStorageService.get<boolean>("isRemember") || false;
+        this._isRemember = this.LocalStorageService.get<boolean>("isRemember") || true;
         if(this._isRemember) {
             this.token = this.LocalStorageService.get<string>("token");
         }
@@ -26,10 +26,11 @@ export default class TokenService {
      * @param loginParam
      */
     login(loginParam: ILoginParam) {
-        this.Restangular.all("users").customPOST(loginParam, "token").then((result) => {
-            this.token = result.token
-        }, function (err) {
-            console.error("登录失败:" + err.state);
+        return this.Restangular.all("users").customPOST(loginParam, "token").then(
+            result => {
+            this.token = result.token;
+        }, err=>{
+            console.error("登录失败:" + err.status);
         });
     }
 

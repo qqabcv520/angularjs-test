@@ -20,12 +20,17 @@
                 <a ui-sref=".tagList" translate>话题</a>
             </li>
         </ul>
-        <ul class="nav navbar-nav navbar-right">
+        <ul ng-if="!vm.UserService.token" class="nav navbar-nav navbar-right">
+            <li >
+                <a ui-sref=".login" translate>登录</a>
+            </li>
+        </ul>
+        <ul ng-if="vm.UserService.token" class="nav navbar-nav navbar-right">
             <li >
                 <a ui-sref=".articleEdit" translate>发布</a>
             </li>
             <li >
-                <a ui-sref=".login" translate>登录</a>
+                <a ui-sref=".login" ng-bind=""></a>
             </li>
         </ul>
     </div>
@@ -67,12 +72,15 @@
         <!--</div>-->
     <!--</div>-->
     <div class="copyright">
-        <span>Copyright &copy; 2017 <span translate>米饭博客</span></span>
-        |
         <span>
-            <a href="" target="_blank">[<span translate>后台管理</span>]</a>
+            Copyright &copy; 2017 <span translate>米饭博客</span>
+            |
         </span>
-        |
+        <span ng-if="vm.TokenService.token">
+            <a href="" target="_blank">[<span translate>后台管理</span>]</a>
+            |
+        </span>
+
         <span>
             <a href="" ng-click="vm.switchLang()">[<span translate>English</span>]</a>
         </span>

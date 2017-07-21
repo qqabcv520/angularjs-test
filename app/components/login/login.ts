@@ -4,11 +4,11 @@
 
 
 import * as angular from 'angular';
-import token from "../../commons/token/token";
+import user from "../../commons/user/user";
 import LoginCtrl from "./LoginCtrl";
 
 
-export default angular.module('login', ['restangular', token])
+export default angular.module('login', ['restangular', user])
     .controller('LoginCtrl', LoginCtrl)
     .name;
 

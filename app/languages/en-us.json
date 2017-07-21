@@ -10,5 +10,7 @@
   "用户名": "username",
   "邮箱": "e-mail",
   "密码": "password",
-  "请选择最多5个标签": "Please select up to 5 tags"
+  "请选择最多5个标签": "Please select up to 5 tags",
+  "x条评论": "{{num}}comments",
+  "x楼": "{{num}}floor"
 }
