@@ -1,28 +1,28 @@
 <div class="tag-article">
     <header class="jumbotron jumbotron-header">
-        <h1 class="jumbotron-title" data-ng-bind="vm.tag.name"></h1>
+        <h1 class="jumbotron-title" ng-bind="vm.tag.name"></h1>
     </header>
 
 
     <div class="container-fluid content">
         <div class="row">
             <div class="col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
-                <div class="panel panel-article" data-ng-repeat="article in vm.articles">
+                <div class="panel panel-article" ng-repeat="article in vm.articles">
                     <div class="panel-heading">
                         <h3 class="article-title">
                             <a ui-sref="home.articleDetail({articleId:article.id})" ng-bind="article.title"></a>
                         </h3>
                     </div>
-                    <div class="panel-body" data-ng-bind="article.outline"></div>
+                    <div class="panel-body" ng-bind="article.outline"></div>
                     <div class="panel-tag">
-                        <div class="article-tag pull-left">
-                            <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
+                        <span class="article-tag pull-left">
+                            <span class="glyphicon glyphicon-tag"></span>
                             <a class="label label-transparent" data-ng-repeat="tag in article.tags" ui-sref="home.tagArticle(tag)" data-ng-bind="tag.name"></a>
-                        </div>
+                        </span>
                         <span class="article-info pull-right">
-						<span>米饭</span>
-						<span>2017-03-03</span>
-					</span>
+                            <span ng-bind="article.user">作者</span>
+                            <span ng-bind="article.createTime | date: 'yyyy-MM-dd'">yyyy-MM-dd</span>
+					    </span>
                         <div class="clearfix"></div>
                     </div>
                 </div>

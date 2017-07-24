@@ -7,24 +7,24 @@
             <div class="col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
                 <div class="article-content" data-ng-bind-html="vm.$sce.trustAsHtml(vm.article.content)">
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
-                <div class="article-footer">
+                <div class="article-footer clearfix">
                     <div class="article-tag pull-left">
-                        <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
+                        <span class="glyphicon glyphicon-tag" ></span>
                         <a class="label label-transparent" data-ng-repeat="tag in vm.article.tags" ui-sref="home.tagArticle(tag)" data-ng-bind="tag.name"></a>
                     </div>
                     <span class="article-info pull-right">
-                        <span data-ng-bind="vm.article.author"></span>
-                        <span data-ng-bind="vm.article.create|date:'yyyy-MM-dd'"></span>
+                        <span data-ng-bind="vm.article.user"></span>
+                        <span data-ng-bind="vm.article.createTime|date:'yyyy-MM-dd'"></span>
                     </span>
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+                <div class="article-toolbar">
+                    <!--<button class="btn btn-transparent" >喜欢</button>-->
+                    <button type="button" class="btn btn-transparent like" ng-model="singleModel" uib-btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0">
+                        <span class="glyphicon glyphicon-heart"></span>
+                        喜欢
+                        <span>5</span>
+                    </button>
+                </div>
                 <div class="article-discuss">
                     <div class="discuss-title">
                         <h3 translate data-translate-values='{num:vm.reviewList.length}'>x条评论</h3>

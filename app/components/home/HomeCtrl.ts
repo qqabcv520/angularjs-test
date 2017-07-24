@@ -98,7 +98,9 @@ export default class HomeCtrl {
         }
     }
 
-
+    /**
+     * 返回顶部
+     */
     top(): void {
         this.$document.scrollTop(0);
     }

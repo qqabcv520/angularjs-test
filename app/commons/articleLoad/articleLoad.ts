@@ -19,11 +19,11 @@ export interface IArticle {
     id?: number;
     title: string;
     content: string;
-    author?: string;
-    create?: Date;
+    user?: string;
+    createTime?: Date;
     reprintedFrom?: string;
     clickCnt?: number;
-    outline: string;
+    outline?: string;
     titleImg?: string;
     tags?: Array<ITag>;
 }

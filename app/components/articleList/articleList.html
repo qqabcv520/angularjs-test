@@ -19,8 +19,8 @@
                             <a class="label label-transparent" data-ng-repeat="tag in article.tags" ui-sref="home.tagArticle(tag)" data-ng-bind="tag.name"></a>
                         </div>
                         <span class="article-info pull-right">
-                            <span>米饭</span>
-                            <span>2017-03-03</span>
+                            <span ng-bind="article.user">作者</span>
+                            <span ng-bind="article.createTime | date: 'yyyy-MM-dd'">yyyy-MM-dd</span>
                         </span>
                         <div class="clearfix"></div>
                     </div>

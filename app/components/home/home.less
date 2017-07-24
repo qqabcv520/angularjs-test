@@ -61,6 +61,46 @@ body {
     }
 }
 
+.btn-transparent {
+    color: @btn-transparent-font-color;
+    background-color: @btn-transparent-bg-color;
+    border-color: @btn-transparent-border-color;
+
+    &:focus,
+    &.focus {
+        color: @btn-transparent-font-focus-color;
+        background-color: @btn-transparent-bg-focus-color;
+        border-color: @btn-transparent-border-focus-color;
+    }
+    &:hover {
+        color: @btn-transparent-font-focus-color;
+        background-color: @btn-transparent-bg-focus-color;
+        border-color: @btn-transparent-border-focus-color;
+    }
+    &:active,
+    &.active {
+        color: @btn-transparent-font-focus-color;
+        background-color: @btn-transparent-bg-focus-color;
+        border-color: @btn-transparent-border-focus-color;
+        box-shadow: none;
+        &:hover {
+            color: @btn-transparent-font-focus-color;
+            background-color: darken(@btn-transparent-bg-focus-color, 5%);
+            border-color: darken(@btn-transparent-border-focus-color, 10%);
+        }
+    }
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        &:hover,
+        &:focus,
+        &.focus {
+            background-color: @btn-transparent-bg-color;
+            border-color: @btn-transparent-border-color;
+        }
+    }
+}
+
 
 .navbar {
   transition: background-color 0.5s, border-color, 0.5s;
@@ -286,4 +326,13 @@ body {
 
 .siderbar:hover {
     color: @main-color;
+}
+
+
+.base-view > .home-content.ng-enter {
+    transition:0.8s linear all;
+    opacity:0;
+}
+.base-view > .home-content.ng-enter.ng-enter-active {
+    opacity:1;
 }

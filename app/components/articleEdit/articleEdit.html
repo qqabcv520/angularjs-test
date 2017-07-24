@@ -9,7 +9,7 @@
                 <div class="editor-article" data-ng-model="vm.article.content" editor ></div>
 
                 <ui-select  class="tag-select" ng-model="vm.selectedTags" theme="bootstrap" multiple limit="5" tagging="vm.tagging" tagging-label="（新建）">
-                    <ui-select-match placeholder="{{'最多选择五项'|translate}}">
+                    <ui-select-match placeholder="{{'请选择最多5个标签'|translate}}">
                         <span data-ng-bind="$item.name"></span>
                     </ui-select-match>
                     <ui-select-choices repeat="tag in vm.tags | filter: $select.search">
